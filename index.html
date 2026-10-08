@@ -656,7 +656,9 @@
     error.textContent = '';
 
     const text = TEXTS[currentLang].message({ parent, phone, note, ageText }).join('\n');
-    window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+    // Same-tab navigation, not window.open: pop-ups are blocked by iPhone Safari and by the
+    // Instagram/Telegram in-app browsers, where most parents will open this page.
+    window.location.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
   });
 </script>
 </body>
