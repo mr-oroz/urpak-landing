@@ -3,11 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Детский сад «Урпак» — Ош</title>
-  <meta name="description" content="Детский сад «Урпак» в Оше: дети от 2 до 5 лет, английский язык, гимнастика и тхэквондо, соляная комната, логопед, психолог и медсестра.">
+  <title>Детский сад «Урпак» в Оше — набор детей 2–5 лет</title>
+  <meta name="description" content="Частный детский сад «Урпак» (бала бакчасы) в Оше, мкр. Юго-Восток: дети от 2 до 5 лет, английский язык, гимнастика и тхэквондо, соляная комната, логопед, психолог и медсестра. Пн–пт 8:00–18:00.">
+  <link rel="canonical" href="https://urpak-landing.vercel.app/">
+  <link rel="alternate" hreflang="ru" href="https://urpak-landing.vercel.app/">
+  <link rel="alternate" hreflang="ky" href="https://urpak-landing.vercel.app/?lang=ky">
+  <link rel="alternate" hreflang="x-default" href="https://urpak-landing.vercel.app/">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <meta property="og:image" content="logo.jpg">
+
+  <!-- How the link looks when shared in WhatsApp, Telegram, Instagram, Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Детский сад «Урпак»">
+  <meta property="og:title" content="Детский сад «Урпак» в Оше — набор детей 2–5 лет">
+  <meta property="og:description" content="Английский, гимнастика и тхэквондо, соляная комната, логопед, психолог и медсестра. Запись через WhatsApp.">
+  <meta property="og:url" content="https://urpak-landing.vercel.app/">
+  <meta property="og:image" content="https://urpak-landing.vercel.app/logo.jpg">
+  <meta property="og:image:width" content="810">
+  <meta property="og:image:height" content="810">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="ky_KG">
+
+  <!-- Structured data: lets Google show the kindergarten as a local business (address, phone, hours). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Preschool", "ChildCare"],
+    "name": "Детский сад «Урпак»",
+    "alternateName": ["Урпак бала бакчасы", "Urpak"],
+    "url": "https://urpak-landing.vercel.app/",
+    "logo": "https://urpak-landing.vercel.app/logo.jpg",
+    "image": "https://urpak-landing.vercel.app/logo.jpg",
+    "description": "Частный детский сад в Оше для детей от 2 до 5 лет: английский язык, гимнастика, тхэквондо, соляная комната, логопед, психолог и медсестра.",
+    "telephone": "+996700512000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Бадыгина, 2, мкр. Юго-Восток",
+      "addressLocality": "Ош",
+      "addressCountry": "KG"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }],
+    "sameAs": ["https://www.instagram.com/urpak.osh/"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -567,8 +610,8 @@
   const STORAGE_KEY = 'urpak-lang';
   const TEXTS = {
     ru: {
-      title: 'Детский сад «Урпак» — Ош',
-      description: 'Детский сад «Урпак» в Оше: дети от 2 до 5 лет, английский язык, гимнастика и тхэквондо, соляная комната, логопед, психолог и медсестра.',
+      title: 'Детский сад «Урпак» в Оше — набор детей 2–5 лет',
+      description: 'Частный детский сад «Урпак» (бала бакчасы) в Оше, мкр. Юго-Восток: дети от 2 до 5 лет, английский язык, гимнастика и тхэквондо, соляная комната, логопед, психолог и медсестра. Пн–пт 8:00–18:00.',
       formError: 'Укажите имя и номер телефона, чтобы мы могли связаться с вами.',
       message: (d) => [
         'Здравствуйте! Хочу записать ребёнка в детский сад «Урпак».',
@@ -579,7 +622,7 @@
       ],
     },
     ky: {
-      title: '«Урпак» бала бакчасы — Ош',
+      title: 'Ош шаарындагы «Урпак» бала бакчасы — 2–5 жаштагы балдарды кабыл алабыз',
       description: 'Ош шаарындагы «Урпак» бала бакчасы: 2–5 жаштагы балдар, англис тили, гимнастика жана таэквондо, туз бөлмөсү, логопед, психолог жана медайым.',
       formError: 'Сиз менен байланышуу үчүн атыңызды жана телефон номериңизди жазыңыз.',
       message: (d) => [
@@ -635,6 +678,10 @@
     try { saved = localStorage.getItem(STORAGE_KEY); } catch { /* ignore */ }
   }
   if (saved === 'ky') applyLanguage('ky');
+  // The Kyrgyz address is its own page for search engines, so it must not point at the Russian one.
+  if (new URLSearchParams(location.search).get('lang') === 'ky') {
+    document.querySelector('link[rel="canonical"]').href = 'https://urpak-landing.vercel.app/?lang=ky';
+  }
 
   const form = document.getElementById('enroll-form');
   const error = document.getElementById('form-error');
