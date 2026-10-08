@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://urpak-landing.vercel.app/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://urpak-landing.vercel.app/"/>
     <xhtml:link rel="alternate" hreflang="ky" href="https://urpak-landing.vercel.app/?lang=ky"/>
   </url>
   <url>
     <loc>https://urpak-landing.vercel.app/?lang=ky</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://urpak-landing.vercel.app/"/>
     <xhtml:link rel="alternate" hreflang="ky" href="https://urpak-landing.vercel.app/?lang=ky"/>
   </url>
